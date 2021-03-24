@@ -27,17 +27,214 @@ public class Vista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PanelBase = new javax.swing.JPanel();
+        logoNintendo = new javax.swing.JLabel();
+        TituloInicio = new javax.swing.JLabel();
+        TituloNivel1 = new javax.swing.JLabel();
+        TituloNivel2 = new javax.swing.JLabel();
+        TituloNivel3 = new javax.swing.JLabel();
+        ScrollPaneNivel2 = new javax.swing.JScrollPane();
+        TextAreaNivel2 = new javax.swing.JTextArea();
+        ScrollPaneMecanico = new javax.swing.JScrollPane();
+        TextAreaMecanico = new javax.swing.JTextArea();
+        ScrollPaneNivel1 = new javax.swing.JScrollPane();
+        TextAreaNivel1 = new javax.swing.JTextArea();
+        ScrollPaneBloqueadas = new javax.swing.JScrollPane();
+        TextAreaBloqueados = new javax.swing.JTextArea();
+        ScrollPaneNivel3 = new javax.swing.JScrollPane();
+        TextAreaNivel3 = new javax.swing.JTextArea();
+        TituloNivelesPrioridad = new javax.swing.JLabel();
+        TituloMecanico = new javax.swing.JLabel();
+        TituloBloqueado = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        PanelBase.setBackground(new java.awt.Color(255, 204, 204));
+
+        logoNintendo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logoNintendo.png"))); // NOI18N
+
+        TituloInicio.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 20)); // NOI18N
+        TituloInicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TituloInicio.setText("Revise el Robot que permite la detección de errores en el ensamblaje de las consolas Nintendo Super Switch");
+
+        TituloNivel1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        TituloNivel1.setText("Nivel de Prioridad 1");
+
+        TituloNivel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        TituloNivel2.setText("Nivel de Prioridad 2");
+
+        TituloNivel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        TituloNivel3.setText("Nivel de Prioridad 3");
+
+        ScrollPaneNivel2.setBackground(new java.awt.Color(188, 186, 190));
+        ScrollPaneNivel2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        ScrollPaneNivel2.setMaximumSize(new java.awt.Dimension(166, 96));
+        ScrollPaneNivel2.setMinimumSize(new java.awt.Dimension(166, 96));
+        ScrollPaneNivel2.setPreferredSize(new java.awt.Dimension(160, 90));
+
+        TextAreaNivel2.setEditable(false);
+        TextAreaNivel2.setBackground(new java.awt.Color(255, 153, 153));
+        TextAreaNivel2.setColumns(20);
+        TextAreaNivel2.setRows(5);
+        TextAreaNivel2.setMaximumSize(new java.awt.Dimension(164, 94));
+        TextAreaNivel2.setMinimumSize(new java.awt.Dimension(164, 94));
+        TextAreaNivel2.setPreferredSize(new java.awt.Dimension(150, 90));
+        ScrollPaneNivel2.setViewportView(TextAreaNivel2);
+
+        ScrollPaneMecanico.setBackground(new java.awt.Color(188, 186, 190));
+        ScrollPaneMecanico.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        ScrollPaneMecanico.setMaximumSize(new java.awt.Dimension(166, 96));
+        ScrollPaneMecanico.setMinimumSize(new java.awt.Dimension(166, 96));
+        ScrollPaneMecanico.setPreferredSize(new java.awt.Dimension(160, 90));
+
+        TextAreaMecanico.setEditable(false);
+        TextAreaMecanico.setBackground(new java.awt.Color(255, 153, 153));
+        TextAreaMecanico.setColumns(20);
+        TextAreaMecanico.setRows(5);
+        TextAreaMecanico.setMaximumSize(new java.awt.Dimension(164, 94));
+        TextAreaMecanico.setMinimumSize(new java.awt.Dimension(164, 94));
+        TextAreaMecanico.setPreferredSize(new java.awt.Dimension(150, 90));
+        ScrollPaneMecanico.setViewportView(TextAreaMecanico);
+
+        ScrollPaneNivel1.setBackground(new java.awt.Color(188, 186, 190));
+        ScrollPaneNivel1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        ScrollPaneNivel1.setMaximumSize(new java.awt.Dimension(166, 96));
+        ScrollPaneNivel1.setMinimumSize(new java.awt.Dimension(166, 96));
+        ScrollPaneNivel1.setPreferredSize(new java.awt.Dimension(160, 90));
+
+        TextAreaNivel1.setEditable(false);
+        TextAreaNivel1.setBackground(new java.awt.Color(255, 153, 153));
+        TextAreaNivel1.setColumns(20);
+        TextAreaNivel1.setRows(5);
+        TextAreaNivel1.setMaximumSize(new java.awt.Dimension(164, 94));
+        TextAreaNivel1.setMinimumSize(new java.awt.Dimension(164, 94));
+        TextAreaNivel1.setPreferredSize(new java.awt.Dimension(150, 90));
+        ScrollPaneNivel1.setViewportView(TextAreaNivel1);
+
+        ScrollPaneBloqueadas.setBackground(new java.awt.Color(188, 186, 190));
+        ScrollPaneBloqueadas.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        ScrollPaneBloqueadas.setMaximumSize(new java.awt.Dimension(166, 96));
+        ScrollPaneBloqueadas.setMinimumSize(new java.awt.Dimension(166, 96));
+        ScrollPaneBloqueadas.setPreferredSize(new java.awt.Dimension(160, 90));
+
+        TextAreaBloqueados.setEditable(false);
+        TextAreaBloqueados.setBackground(new java.awt.Color(255, 153, 153));
+        TextAreaBloqueados.setColumns(20);
+        TextAreaBloqueados.setRows(5);
+        TextAreaBloqueados.setMaximumSize(new java.awt.Dimension(164, 94));
+        TextAreaBloqueados.setMinimumSize(new java.awt.Dimension(164, 94));
+        TextAreaBloqueados.setPreferredSize(new java.awt.Dimension(150, 90));
+        ScrollPaneBloqueadas.setViewportView(TextAreaBloqueados);
+
+        ScrollPaneNivel3.setBackground(new java.awt.Color(188, 186, 190));
+        ScrollPaneNivel3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        ScrollPaneNivel3.setMaximumSize(new java.awt.Dimension(166, 96));
+        ScrollPaneNivel3.setMinimumSize(new java.awt.Dimension(166, 96));
+        ScrollPaneNivel3.setPreferredSize(new java.awt.Dimension(160, 90));
+
+        TextAreaNivel3.setEditable(false);
+        TextAreaNivel3.setBackground(new java.awt.Color(255, 153, 153));
+        TextAreaNivel3.setColumns(20);
+        TextAreaNivel3.setRows(5);
+        TextAreaNivel3.setMaximumSize(new java.awt.Dimension(164, 94));
+        TextAreaNivel3.setMinimumSize(new java.awt.Dimension(164, 94));
+        TextAreaNivel3.setPreferredSize(new java.awt.Dimension(150, 90));
+        ScrollPaneNivel3.setViewportView(TextAreaNivel3);
+
+        TituloNivelesPrioridad.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 18)); // NOI18N
+        TituloNivelesPrioridad.setForeground(new java.awt.Color(255, 51, 51));
+        TituloNivelesPrioridad.setText("Niveles de Prioridad");
+
+        TituloMecanico.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 18)); // NOI18N
+        TituloMecanico.setForeground(new java.awt.Color(255, 51, 51));
+        TituloMecanico.setText("Consolas en el Mecánico");
+
+        TituloBloqueado.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 18)); // NOI18N
+        TituloBloqueado.setForeground(new java.awt.Color(255, 51, 51));
+        TituloBloqueado.setText("Consolas Bloqueadas");
+
+        javax.swing.GroupLayout PanelBaseLayout = new javax.swing.GroupLayout(PanelBase);
+        PanelBase.setLayout(PanelBaseLayout);
+        PanelBaseLayout.setHorizontalGroup(
+            PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBaseLayout.createSequentialGroup()
+                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelBaseLayout.createSequentialGroup()
+                        .addGap(334, 334, 334)
+                        .addComponent(logoNintendo, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(TituloInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(PanelBaseLayout.createSequentialGroup()
+                            .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(PanelBaseLayout.createSequentialGroup()
+                                    .addGap(23, 23, 23)
+                                    .addComponent(TituloMecanico)
+                                    .addGap(216, 216, 216)
+                                    .addComponent(TituloNivelesPrioridad))
+                                .addGroup(PanelBaseLayout.createSequentialGroup()
+                                    .addGap(40, 40, 40)
+                                    .addComponent(ScrollPaneMecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(TituloNivel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(ScrollPaneNivel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(28, 28, 28)
+                                    .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(TituloNivel2)
+                                        .addComponent(ScrollPaneNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(PanelBaseLayout.createSequentialGroup()
+                                    .addGap(23, 23, 23)
+                                    .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(PanelBaseLayout.createSequentialGroup()
+                                            .addGap(13, 13, 13)
+                                            .addComponent(TituloNivel3))
+                                        .addComponent(ScrollPaneNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(52, 52, 52)
+                                    .addComponent(ScrollPaneBloqueadas, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(19, 19, 19))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(TituloBloqueado)
+                                    .addGap(10, 10, 10))))))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        PanelBaseLayout.setVerticalGroup(
+            PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBaseLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logoNintendo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TituloInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TituloMecanico)
+                    .addComponent(TituloNivelesPrioridad)
+                    .addComponent(TituloBloqueado))
+                .addGap(18, 18, 18)
+                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TituloNivel1)
+                    .addComponent(TituloNivel2)
+                    .addComponent(TituloNivel3))
+                .addGap(12, 12, 12)
+                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ScrollPaneNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ScrollPaneNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ScrollPaneNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ScrollPaneMecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ScrollPaneBloqueadas, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(PanelBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -79,5 +276,24 @@ public class Vista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PanelBase;
+    private javax.swing.JScrollPane ScrollPaneBloqueadas;
+    private javax.swing.JScrollPane ScrollPaneMecanico;
+    private javax.swing.JScrollPane ScrollPaneNivel1;
+    private javax.swing.JScrollPane ScrollPaneNivel2;
+    private javax.swing.JScrollPane ScrollPaneNivel3;
+    public javax.swing.JTextArea TextAreaBloqueados;
+    public javax.swing.JTextArea TextAreaMecanico;
+    public javax.swing.JTextArea TextAreaNivel1;
+    public javax.swing.JTextArea TextAreaNivel2;
+    public javax.swing.JTextArea TextAreaNivel3;
+    private javax.swing.JLabel TituloBloqueado;
+    private javax.swing.JLabel TituloInicio;
+    private javax.swing.JLabel TituloMecanico;
+    private javax.swing.JLabel TituloNivel1;
+    private javax.swing.JLabel TituloNivel2;
+    private javax.swing.JLabel TituloNivel3;
+    private javax.swing.JLabel TituloNivelesPrioridad;
+    private javax.swing.JLabel logoNintendo;
     // End of variables declaration//GEN-END:variables
 }
