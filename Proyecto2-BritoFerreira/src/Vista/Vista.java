@@ -5,6 +5,11 @@
  */
 package Vista;
 
+import Controlador.Simulador;
+import Modelo.Cola;
+import Modelo.SuperSwitch;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Giselle Ferreira
@@ -16,6 +21,28 @@ public class Vista extends javax.swing.JFrame {
      */
     public Vista() {
         initComponents();
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+    }
+    
+    public void actualizar(SuperSwitch consola, String infoCola1, String infoCola2, String infoCola3, String infoColaBloqueados){
+        
+        if(consola != null){
+            
+            this.TextAreaRobot.setText(String.valueOf(consola.getId()));
+            
+        }else {
+            
+            this.TextAreaRobot.setText("Vacío");
+        }
+        
+        this.TextAreaNivel1.setText(infoCola1);
+        this.TextAreaNivel2.setText(infoCola2);
+        this.TextAreaNivel3.setText(infoCola3);
+        this.TextAreaBloqueados.setText(infoColaBloqueados);
+        
     }
 
     /**
@@ -36,7 +63,7 @@ public class Vista extends javax.swing.JFrame {
         ScrollPaneNivel2 = new javax.swing.JScrollPane();
         TextAreaNivel2 = new javax.swing.JTextArea();
         ScrollPaneMecanico = new javax.swing.JScrollPane();
-        TextAreaMecanico = new javax.swing.JTextArea();
+        TextAreaRobot = new javax.swing.JTextArea();
         ScrollPaneNivel1 = new javax.swing.JScrollPane();
         TextAreaNivel1 = new javax.swing.JTextArea();
         ScrollPaneBloqueadas = new javax.swing.JScrollPane();
@@ -44,7 +71,7 @@ public class Vista extends javax.swing.JFrame {
         ScrollPaneNivel3 = new javax.swing.JScrollPane();
         TextAreaNivel3 = new javax.swing.JTextArea();
         TituloNivelesPrioridad = new javax.swing.JLabel();
-        TituloMecanico = new javax.swing.JLabel();
+        TituloRobot = new javax.swing.JLabel();
         TituloBloqueado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,7 +82,7 @@ public class Vista extends javax.swing.JFrame {
 
         TituloInicio.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 20)); // NOI18N
         TituloInicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TituloInicio.setText("Revise el Robot que permite la detección de errores en el ensamblaje de las consolas Nintendo Super Switch");
+        TituloInicio.setText("Robot que para la detección de errores en las consolas Nintendo Super Switch");
 
         TituloNivel1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         TituloNivel1.setText("Nivel de Prioridad 1");
@@ -87,14 +114,14 @@ public class Vista extends javax.swing.JFrame {
         ScrollPaneMecanico.setMinimumSize(new java.awt.Dimension(166, 96));
         ScrollPaneMecanico.setPreferredSize(new java.awt.Dimension(160, 90));
 
-        TextAreaMecanico.setEditable(false);
-        TextAreaMecanico.setBackground(new java.awt.Color(255, 153, 153));
-        TextAreaMecanico.setColumns(20);
-        TextAreaMecanico.setRows(5);
-        TextAreaMecanico.setMaximumSize(new java.awt.Dimension(164, 94));
-        TextAreaMecanico.setMinimumSize(new java.awt.Dimension(164, 94));
-        TextAreaMecanico.setPreferredSize(new java.awt.Dimension(150, 90));
-        ScrollPaneMecanico.setViewportView(TextAreaMecanico);
+        TextAreaRobot.setEditable(false);
+        TextAreaRobot.setBackground(new java.awt.Color(255, 153, 153));
+        TextAreaRobot.setColumns(20);
+        TextAreaRobot.setRows(5);
+        TextAreaRobot.setMaximumSize(new java.awt.Dimension(164, 94));
+        TextAreaRobot.setMinimumSize(new java.awt.Dimension(164, 94));
+        TextAreaRobot.setPreferredSize(new java.awt.Dimension(150, 90));
+        ScrollPaneMecanico.setViewportView(TextAreaRobot);
 
         ScrollPaneNivel1.setBackground(new java.awt.Color(188, 186, 190));
         ScrollPaneNivel1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -145,9 +172,9 @@ public class Vista extends javax.swing.JFrame {
         TituloNivelesPrioridad.setForeground(new java.awt.Color(255, 51, 51));
         TituloNivelesPrioridad.setText("Niveles de Prioridad");
 
-        TituloMecanico.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 18)); // NOI18N
-        TituloMecanico.setForeground(new java.awt.Color(255, 51, 51));
-        TituloMecanico.setText("Consolas en el Mecánico");
+        TituloRobot.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 18)); // NOI18N
+        TituloRobot.setForeground(new java.awt.Color(255, 51, 51));
+        TituloRobot.setText("Consola en el Robot");
 
         TituloBloqueado.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 18)); // NOI18N
         TituloBloqueado.setForeground(new java.awt.Color(255, 51, 51));
@@ -158,57 +185,57 @@ public class Vista extends javax.swing.JFrame {
         PanelBaseLayout.setHorizontalGroup(
             PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBaseLayout.createSequentialGroup()
+                .addGap(295, 295, 295)
+                .addComponent(logoNintendo, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(TituloInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(TituloNivelesPrioridad)
+                    .addGroup(PanelBaseLayout.createSequentialGroup()
+                        .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TituloRobot)
+                            .addGroup(PanelBaseLayout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(ScrollPaneMecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ScrollPaneNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
+                                .addComponent(TituloNivel1)
+                                .addGap(9, 9, 9)))
+                        .addGap(28, 28, 28)
+                        .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ScrollPaneNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
+                                .addComponent(TituloNivel2)
+                                .addGap(9, 9, 9)))
+                        .addGap(15, 15, 15)))
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelBaseLayout.createSequentialGroup()
-                        .addGap(334, 334, 334)
-                        .addComponent(logoNintendo, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(TituloInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(PanelBaseLayout.createSequentialGroup()
-                            .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(PanelBaseLayout.createSequentialGroup()
-                                    .addGap(23, 23, 23)
-                                    .addComponent(TituloMecanico)
-                                    .addGap(216, 216, 216)
-                                    .addComponent(TituloNivelesPrioridad))
-                                .addGroup(PanelBaseLayout.createSequentialGroup()
-                                    .addGap(40, 40, 40)
-                                    .addComponent(ScrollPaneMecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(TituloNivel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(ScrollPaneNivel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(28, 28, 28)
-                                    .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(TituloNivel2)
-                                        .addComponent(ScrollPaneNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(PanelBaseLayout.createSequentialGroup()
-                                    .addGap(23, 23, 23)
-                                    .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(PanelBaseLayout.createSequentialGroup()
-                                            .addGap(13, 13, 13)
-                                            .addComponent(TituloNivel3))
-                                        .addComponent(ScrollPaneNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(52, 52, 52)
-                                    .addComponent(ScrollPaneBloqueadas, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(19, 19, 19))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(TituloBloqueado)
-                                    .addGap(10, 10, 10))))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addGap(16, 16, 16)
+                        .addComponent(TituloNivel3)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PanelBaseLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(ScrollPaneNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64)
+                        .addComponent(ScrollPaneBloqueadas, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TituloBloqueado)
+                        .addGap(24, 24, 24))))
         );
         PanelBaseLayout.setVerticalGroup(
             PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBaseLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(logoNintendo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(TituloInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(13, 13, 13)
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TituloMecanico)
                     .addComponent(TituloNivelesPrioridad)
                     .addComponent(TituloBloqueado))
                 .addGap(18, 18, 18)
@@ -216,14 +243,21 @@ public class Vista extends javax.swing.JFrame {
                     .addComponent(TituloNivel1)
                     .addComponent(TituloNivel2)
                     .addComponent(TituloNivel3))
-                .addGap(12, 12, 12)
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ScrollPaneNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ScrollPaneNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ScrollPaneNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ScrollPaneMecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ScrollPaneBloqueadas, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PanelBaseLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ScrollPaneNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ScrollPaneNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ScrollPaneNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ScrollPaneBloqueadas, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(24, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TituloRobot)
+                        .addGap(18, 18, 18)
+                        .addComponent(ScrollPaneMecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(155, 155, 155))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -283,17 +317,17 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JScrollPane ScrollPaneNivel2;
     private javax.swing.JScrollPane ScrollPaneNivel3;
     public javax.swing.JTextArea TextAreaBloqueados;
-    public javax.swing.JTextArea TextAreaMecanico;
     public javax.swing.JTextArea TextAreaNivel1;
     public javax.swing.JTextArea TextAreaNivel2;
     public javax.swing.JTextArea TextAreaNivel3;
+    public javax.swing.JTextArea TextAreaRobot;
     private javax.swing.JLabel TituloBloqueado;
     private javax.swing.JLabel TituloInicio;
-    private javax.swing.JLabel TituloMecanico;
     private javax.swing.JLabel TituloNivel1;
     private javax.swing.JLabel TituloNivel2;
     private javax.swing.JLabel TituloNivel3;
     private javax.swing.JLabel TituloNivelesPrioridad;
+    private javax.swing.JLabel TituloRobot;
     private javax.swing.JLabel logoNintendo;
     // End of variables declaration//GEN-END:variables
 }

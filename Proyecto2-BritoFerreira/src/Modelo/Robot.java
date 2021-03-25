@@ -19,7 +19,7 @@ public class Robot {
     public void revisarConsola(SuperSwitch consola){
         
         if(consola != null){
-            
+            System.out.println("\nRevisando");
             try {
                 Thread.sleep(7000);
                 
@@ -38,7 +38,7 @@ public class Robot {
                     
                     Simulador.bloqueados.encolarNodoConsola(consola);
                     
-                    System.out.println("Necesito más tiempo en revisión:");
+                    System.out.println("Consola bloqueada:");
                     System.out.println("ID: " + consola.getId());
                     System.out.println("Prioridad: " + consola.getPrioridad());
                     
@@ -58,17 +58,22 @@ public class Robot {
                         
                     }
                     
-                    System.out.println("Requiero mejora:");
+                    System.out.println("Vuelvo a mi cola:");
                     System.out.println("ID: " + consola.getId());
                     System.out.println("Prioridad: " + consola.getPrioridad());
                     
                 }
                 
+                System.out.println("");
+                
             } catch (InterruptedException ex) {
                 System.out.println("Error");
             }
             
+        }else{
+            System.out.println("No hay consola pa revisar!!!!!!!!");
         }
         
     }
+    
 }
