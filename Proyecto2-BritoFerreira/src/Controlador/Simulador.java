@@ -5,19 +5,47 @@
  */
 package Controlador;
 
+import Modelo.Administrador;
+import Modelo.Cola;
+import Modelo.Robot;
+import Vista.Vista;
+
 /**
  *
  * @author Giselle Ferreira
  */
 public class Simulador {
     
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    public static Cola prioridadUno;
+    public static Cola prioridadDos;
+    public static Cola prioridadTres;
+    public static Cola bloqueados;
+    
+    public static Administrador administrador;
+    public static Robot robot;
+    
+    public static int idActual;
+    
+    public Vista vista;
+
+    public Simulador() {
         
-        System.out.println("hola");
-              
+        this.prioridadUno = new Cola();
+        this.prioridadDos = new Cola();
+        this.prioridadTres = new Cola();
+        this.bloqueados = new Cola();
+        
+        this.administrador = new Administrador();
+        this.robot = new Robot();
+        
+        this.idActual = 1;
+        
+        this.vista = new Vista();
+        
+        
+        
     }
+    
+    
     
 }
