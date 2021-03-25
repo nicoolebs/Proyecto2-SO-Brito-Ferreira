@@ -27,21 +27,21 @@ public class Vista extends javax.swing.JFrame {
         this.setResizable(false);
     }
     
-    public void actualizar(SuperSwitch consola, String infoCola1, String infoCola2, String infoCola3, String infoColaBloqueados){
+    public void actualizar(SuperSwitch consola, String infoCola1, String infoCola2, String infoCola3, String infoColaMejora){
         
         if(consola != null){
             
-            this.TextAreaRobot.setText(String.valueOf(consola.getId()));
+            this.jTextFieldRobot.setText(String.valueOf(consola.getId()));
             
         }else {
             
-            this.TextAreaRobot.setText("Vacío");
+            this.jTextFieldRobot.setText("Vacío");
         }
         
         this.TextAreaNivel1.setText(infoCola1);
         this.TextAreaNivel2.setText(infoCola2);
         this.TextAreaNivel3.setText(infoCola3);
-        this.TextAreaBloqueados.setText(infoColaBloqueados);
+        this.TextAreaMejora.setText(infoColaMejora);
         
     }
 
@@ -62,17 +62,16 @@ public class Vista extends javax.swing.JFrame {
         TituloNivel3 = new javax.swing.JLabel();
         ScrollPaneNivel2 = new javax.swing.JScrollPane();
         TextAreaNivel2 = new javax.swing.JTextArea();
-        ScrollPaneMecanico = new javax.swing.JScrollPane();
-        TextAreaRobot = new javax.swing.JTextArea();
         ScrollPaneNivel1 = new javax.swing.JScrollPane();
         TextAreaNivel1 = new javax.swing.JTextArea();
-        ScrollPaneBloqueadas = new javax.swing.JScrollPane();
-        TextAreaBloqueados = new javax.swing.JTextArea();
+        ScrollPaneMejora = new javax.swing.JScrollPane();
+        TextAreaMejora = new javax.swing.JTextArea();
         ScrollPaneNivel3 = new javax.swing.JScrollPane();
         TextAreaNivel3 = new javax.swing.JTextArea();
         TituloNivelesPrioridad = new javax.swing.JLabel();
         TituloRobot = new javax.swing.JLabel();
-        TituloBloqueado = new javax.swing.JLabel();
+        TituloMejora = new javax.swing.JLabel();
+        jTextFieldRobot = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,26 +101,13 @@ public class Vista extends javax.swing.JFrame {
         TextAreaNivel2.setEditable(false);
         TextAreaNivel2.setBackground(new java.awt.Color(255, 153, 153));
         TextAreaNivel2.setColumns(20);
+        TextAreaNivel2.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
         TextAreaNivel2.setRows(5);
+        TextAreaNivel2.setAlignmentX(1.0F);
+        TextAreaNivel2.setAlignmentY(1.0F);
         TextAreaNivel2.setMaximumSize(new java.awt.Dimension(164, 94));
         TextAreaNivel2.setMinimumSize(new java.awt.Dimension(164, 94));
-        TextAreaNivel2.setPreferredSize(new java.awt.Dimension(150, 90));
         ScrollPaneNivel2.setViewportView(TextAreaNivel2);
-
-        ScrollPaneMecanico.setBackground(new java.awt.Color(188, 186, 190));
-        ScrollPaneMecanico.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        ScrollPaneMecanico.setMaximumSize(new java.awt.Dimension(166, 96));
-        ScrollPaneMecanico.setMinimumSize(new java.awt.Dimension(166, 96));
-        ScrollPaneMecanico.setPreferredSize(new java.awt.Dimension(160, 90));
-
-        TextAreaRobot.setEditable(false);
-        TextAreaRobot.setBackground(new java.awt.Color(255, 153, 153));
-        TextAreaRobot.setColumns(20);
-        TextAreaRobot.setRows(5);
-        TextAreaRobot.setMaximumSize(new java.awt.Dimension(164, 94));
-        TextAreaRobot.setMinimumSize(new java.awt.Dimension(164, 94));
-        TextAreaRobot.setPreferredSize(new java.awt.Dimension(150, 90));
-        ScrollPaneMecanico.setViewportView(TextAreaRobot);
 
         ScrollPaneNivel1.setBackground(new java.awt.Color(188, 186, 190));
         ScrollPaneNivel1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -132,26 +118,30 @@ public class Vista extends javax.swing.JFrame {
         TextAreaNivel1.setEditable(false);
         TextAreaNivel1.setBackground(new java.awt.Color(255, 153, 153));
         TextAreaNivel1.setColumns(20);
+        TextAreaNivel1.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
         TextAreaNivel1.setRows(5);
+        TextAreaNivel1.setAlignmentX(1.0F);
+        TextAreaNivel1.setAlignmentY(1.0F);
         TextAreaNivel1.setMaximumSize(new java.awt.Dimension(164, 94));
         TextAreaNivel1.setMinimumSize(new java.awt.Dimension(164, 94));
-        TextAreaNivel1.setPreferredSize(new java.awt.Dimension(150, 90));
         ScrollPaneNivel1.setViewportView(TextAreaNivel1);
 
-        ScrollPaneBloqueadas.setBackground(new java.awt.Color(188, 186, 190));
-        ScrollPaneBloqueadas.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        ScrollPaneBloqueadas.setMaximumSize(new java.awt.Dimension(166, 96));
-        ScrollPaneBloqueadas.setMinimumSize(new java.awt.Dimension(166, 96));
-        ScrollPaneBloqueadas.setPreferredSize(new java.awt.Dimension(160, 90));
+        ScrollPaneMejora.setBackground(new java.awt.Color(188, 186, 190));
+        ScrollPaneMejora.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        ScrollPaneMejora.setMaximumSize(new java.awt.Dimension(166, 96));
+        ScrollPaneMejora.setMinimumSize(new java.awt.Dimension(166, 96));
+        ScrollPaneMejora.setPreferredSize(new java.awt.Dimension(160, 90));
 
-        TextAreaBloqueados.setEditable(false);
-        TextAreaBloqueados.setBackground(new java.awt.Color(255, 153, 153));
-        TextAreaBloqueados.setColumns(20);
-        TextAreaBloqueados.setRows(5);
-        TextAreaBloqueados.setMaximumSize(new java.awt.Dimension(164, 94));
-        TextAreaBloqueados.setMinimumSize(new java.awt.Dimension(164, 94));
-        TextAreaBloqueados.setPreferredSize(new java.awt.Dimension(150, 90));
-        ScrollPaneBloqueadas.setViewportView(TextAreaBloqueados);
+        TextAreaMejora.setEditable(false);
+        TextAreaMejora.setBackground(new java.awt.Color(255, 153, 153));
+        TextAreaMejora.setColumns(20);
+        TextAreaMejora.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        TextAreaMejora.setRows(5);
+        TextAreaMejora.setAlignmentX(1.0F);
+        TextAreaMejora.setAlignmentY(1.0F);
+        TextAreaMejora.setMaximumSize(new java.awt.Dimension(164, 94));
+        TextAreaMejora.setMinimumSize(new java.awt.Dimension(164, 94));
+        ScrollPaneMejora.setViewportView(TextAreaMejora);
 
         ScrollPaneNivel3.setBackground(new java.awt.Color(188, 186, 190));
         ScrollPaneNivel3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -162,10 +152,12 @@ public class Vista extends javax.swing.JFrame {
         TextAreaNivel3.setEditable(false);
         TextAreaNivel3.setBackground(new java.awt.Color(255, 153, 153));
         TextAreaNivel3.setColumns(20);
+        TextAreaNivel3.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
         TextAreaNivel3.setRows(5);
+        TextAreaNivel3.setAlignmentX(1.0F);
+        TextAreaNivel3.setAlignmentY(1.0F);
         TextAreaNivel3.setMaximumSize(new java.awt.Dimension(164, 94));
         TextAreaNivel3.setMinimumSize(new java.awt.Dimension(164, 94));
-        TextAreaNivel3.setPreferredSize(new java.awt.Dimension(150, 90));
         ScrollPaneNivel3.setViewportView(TextAreaNivel3);
 
         TituloNivelesPrioridad.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 18)); // NOI18N
@@ -176,9 +168,13 @@ public class Vista extends javax.swing.JFrame {
         TituloRobot.setForeground(new java.awt.Color(255, 51, 51));
         TituloRobot.setText("Consola en el Robot");
 
-        TituloBloqueado.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 18)); // NOI18N
-        TituloBloqueado.setForeground(new java.awt.Color(255, 51, 51));
-        TituloBloqueado.setText("Consolas Bloqueadas");
+        TituloMejora.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 18)); // NOI18N
+        TituloMejora.setForeground(new java.awt.Color(255, 51, 51));
+        TituloMejora.setText("Consolas en Mejora");
+
+        jTextFieldRobot.setBackground(new java.awt.Color(255, 153, 153));
+        jTextFieldRobot.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jTextFieldRobot.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout PanelBaseLayout = new javax.swing.GroupLayout(PanelBase);
         PanelBase.setLayout(PanelBaseLayout);
@@ -193,11 +189,11 @@ public class Vista extends javax.swing.JFrame {
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(TituloNivelesPrioridad)
                     .addGroup(PanelBaseLayout.createSequentialGroup()
-                        .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(TituloRobot)
-                            .addGroup(PanelBaseLayout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(ScrollPaneMecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelBaseLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(jTextFieldRobot, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ScrollPaneNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -220,11 +216,11 @@ public class Vista extends javax.swing.JFrame {
                         .addGap(8, 8, 8)
                         .addComponent(ScrollPaneNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(64, 64, 64)
-                        .addComponent(ScrollPaneBloqueadas, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ScrollPaneMejora, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(TituloBloqueado)
+                        .addComponent(TituloMejora)
                         .addGap(24, 24, 24))))
         );
         PanelBaseLayout.setVerticalGroup(
@@ -237,7 +233,7 @@ public class Vista extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TituloNivelesPrioridad)
-                    .addComponent(TituloBloqueado))
+                    .addComponent(TituloMejora))
                 .addGap(18, 18, 18)
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TituloNivel1)
@@ -250,14 +246,14 @@ public class Vista extends javax.swing.JFrame {
                             .addComponent(ScrollPaneNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ScrollPaneNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ScrollPaneNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ScrollPaneBloqueadas, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ScrollPaneMejora, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(24, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(TituloRobot)
-                        .addGap(18, 18, 18)
-                        .addComponent(ScrollPaneMecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(155, 155, 155))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldRobot, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(176, 176, 176))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -311,23 +307,22 @@ public class Vista extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelBase;
-    private javax.swing.JScrollPane ScrollPaneBloqueadas;
-    private javax.swing.JScrollPane ScrollPaneMecanico;
+    private javax.swing.JScrollPane ScrollPaneMejora;
     private javax.swing.JScrollPane ScrollPaneNivel1;
     private javax.swing.JScrollPane ScrollPaneNivel2;
     private javax.swing.JScrollPane ScrollPaneNivel3;
-    public javax.swing.JTextArea TextAreaBloqueados;
+    public javax.swing.JTextArea TextAreaMejora;
     public javax.swing.JTextArea TextAreaNivel1;
     public javax.swing.JTextArea TextAreaNivel2;
     public javax.swing.JTextArea TextAreaNivel3;
-    public javax.swing.JTextArea TextAreaRobot;
-    private javax.swing.JLabel TituloBloqueado;
     private javax.swing.JLabel TituloInicio;
+    private javax.swing.JLabel TituloMejora;
     private javax.swing.JLabel TituloNivel1;
     private javax.swing.JLabel TituloNivel2;
     private javax.swing.JLabel TituloNivel3;
     private javax.swing.JLabel TituloNivelesPrioridad;
     private javax.swing.JLabel TituloRobot;
+    private javax.swing.JTextField jTextFieldRobot;
     private javax.swing.JLabel logoNintendo;
     // End of variables declaration//GEN-END:variables
 }

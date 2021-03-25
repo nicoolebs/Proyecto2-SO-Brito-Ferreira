@@ -34,7 +34,7 @@ public class Cola {
         return inicio == null;
     }
     
-    //Metodo para insertar un elemento en la cola
+    //Metodo para insertar un elemento en la cola sin crear la consola
     public void encolarConsola(int id, int prioridad){
         SuperSwitch nuevo = new SuperSwitch(id, prioridad);
         
@@ -48,7 +48,7 @@ public class Cola {
         tamaño++;
     }
     
-    //Metodo para insertar un elemento en la cola
+    //Metodo para insertar un elemento en la cola con la consola ya creada
     public void encolarNodoConsola(SuperSwitch consola){
         
         if(estaVacia()){
@@ -80,20 +80,8 @@ public class Cola {
         
     }
     
-    public void imprimirCola(){
-        SuperSwitch consola = this.inicio;
-        System.out.println("Cola: ");
-        
-        while (consola != null) {            
-            
-            System.out.println("ID: " + consola.getId());
-            System.out.println("Prioridad: " + consola.getPrioridad());
-            System.out.println("Consolas revisadas hasta esta consola: " + consola.getNumConsolasRevisadas() + "\n");
-            
-        }
-        
-    }
-
+//    GETTERS Y SETTERS
+    
     public SuperSwitch getInicio() {
         return inicio;
     }

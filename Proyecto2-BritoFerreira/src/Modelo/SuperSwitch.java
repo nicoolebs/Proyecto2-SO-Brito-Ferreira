@@ -13,7 +13,7 @@ public class SuperSwitch {
     
 //    VARIABLES
     
-//    ID de la consola, nivel de prioridad y apuntador al siguiente nodo de la cola
+//    ID de la consola, nivel de prioridad, número de consolas revisadas antes de la actual y apuntador al siguiente nodo de la cola
     private int id, prioridad, numConsolasRevisadas;
     private SuperSwitch sig;
 
@@ -24,14 +24,6 @@ public class SuperSwitch {
         this.id = id;
         this.prioridad = prioridad;
         this.numConsolasRevisadas = 0;
-        sig = null;
-    }
-    
-//    Constructor para crear una consola con su ID, su nivel de prioridad y el numero de consolas que se han revisado
-    public SuperSwitch(int id, int prioridad, int numConsolasRevisadas) {
-        this.id = id;
-        this.prioridad = prioridad;
-        this.numConsolasRevisadas = numConsolasRevisadas;
         sig = null;
     }
     
